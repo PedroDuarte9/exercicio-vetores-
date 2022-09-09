@@ -1,43 +1,57 @@
 package application;
 
-import entities.Product;
+import entities.Pensao;
 
 import java.util.Locale;
 import java.util.Scanner;
 
 public class Program {
     public static void main(String[] args) {
-        /*Fazer um programa para ler um número inteiro N e os dados (nome e
-          preço) de N Produtos. Armazene os N produtos em um vetor. Em
-          seguida, mostrar o preço médio dos produtos.*/
+        /*A dona de um pensionato possui dez quartos para alugar para estudantes,
+        sendo esses quartos identificados pelos números 0 a 9.
+
+        Fazer um programa que inicie com todos os dez quartos vazios, e depois
+        leia uma quantidade N representando o número de estudantes que vão
+        alugar quartos (N pode ser de 1 a 10). Em seguida, registre o aluguel dos
+        N estudantes. Para cada registro de aluguel, informar o nome e email do
+        estudante, bem como qual dos quartos ele escolheu (de 0 a 9). Suponha
+        que seja escolhido um quarto vago. Ao final, seu programa deve imprimir
+        um relatório de todas ocupações do pensionato, por ordem de quarto,
+        conforme exemplo.*/
 
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Digite a Quantidade de Produtos");
+        Pensao[] vetor = new Pensao[10];
+
+        System.out.println("Quantos quartos serão alugados");
         int n = sc.nextInt();
 
-        Product[] vetor = new Product[n]; //Estrutura do vetor a partir de uma classe.
+        vetor = new Pensao[n]; //Estrutura do vetor a partir de uma classe.
 
         for(int i = 0; i < n; i++){
-            sc.nextLine(); //QUebra de linha
-            System.out.println("Nome: ");
+            sc.nextLine();
+            System.out.println("Nome:");
             String nome = sc.nextLine();
-            System.out.println("Preço: ");
-            double preco = sc.nextDouble();
-            vetor[i] = new Product(nome, preco); //Instanciando o vetor a partir de uma classe dentro do for para as variáveis armazenarem os valores corretos
+            System.out.println("E-mail:");
+            String email = sc.nextLine();
+            System.out.println("Quarto:");
+            int quarto = sc.nextInt();
+            vetor[i] = new Pensao(nome, email, quarto);
 
         }
 
-        double soma = 0.0;
-        for(int i = 0; i < n; i++){
-            soma += vetor[i].getPreco(); // Bloco de código para pegar apenas os valores do vetor[i]
+        String nome = "";
+        String email = "";
+        int quarto = 0;
+        for (int i = 0; i < n; i++){
+            nome = vetor[i].getNome();
+            email = vetor[i].getEmail();
+            quarto = vetor[i].getQuarto();
+
         }
-
-        double media = soma / n;
-
-        System.out.println("A média de valores é: " + media);
-
+        Pensao p1 = new Pensao(nome, email, quarto);
+        System.out.println(p1);
 
         sc.close();
 
