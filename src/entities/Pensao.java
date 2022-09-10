@@ -43,7 +43,7 @@ public class Pensao {
         return "Pensao{" +
                 "nome='" + nome + '\'' +
                 ", email='" + email + '\'' +
-                ", quarto=" + quarto +
+                ", quarto=" + this.quarto +
                 '}';
     }
 }

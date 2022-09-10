@@ -22,22 +22,22 @@ public class Program {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        Pensao[] vetor = new Pensao[10];
+//        Pensao[] vetor = new Pensao[10];
 
         System.out.println("Quantos quartos serão alugados");
         int n = sc.nextInt();
 
-        vetor = new Pensao[n]; //Estrutura do vetor a partir de uma classe.
+        Pensao[] vetor = new Pensao[10]; //Estrutura do vetor a partir de uma classe.
 
-        for(int i = 0; i < n; i++){
+        for(int i = 0; i < vetor.length; i++){
             sc.nextLine();
             System.out.println("Nome:");
-            String nome = sc.nextLine();
+            vetor[i].setNome(sc.nextLine());
             System.out.println("E-mail:");
-            String email = sc.nextLine();
+            vetor[i].setEmail(sc.nextLine());
             System.out.println("Quarto:");
-            int quarto = sc.nextInt();
-            vetor[i] = new Pensao(nome, email, quarto);
+            vetor[i].setQuarto(sc.nextInt());
+            vetor[i] = new Pensao();
 
         }
 
@@ -51,7 +51,11 @@ public class Program {
 
         }
         Pensao p1 = new Pensao(nome, email, quarto);
+        Pensao p2 = new Pensao(nome, email, quarto);
+        Pensao p3 = new Pensao(nome, email, quarto);
         System.out.println(p1);
+        System.out.println(p2);
+        System.out.println(p3);
 
         sc.close();
 
