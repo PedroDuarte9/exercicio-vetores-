@@ -22,15 +22,15 @@ public class Program {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        Pensao[] vetor = new Pensao[10]; //Estrutura do vetor a partir de uma classe.
+        Pensao[] vetor = new Pensao[10]; //Estrutura do vetor a partir de uma classe, nesse caso temos um vetor com 10 posições
 
         System.out.println("Quantos quartos serão alugados");
-        int n = sc.nextInt();
+        int n = sc.nextInt(); //Aqui vamos receber a quantidade de posições que serão usadas do nosso vetor de 10 posições
 
 
         for(int i = 0; i < n; i++){
-            System.out.println();
-            System.out.println("Cliente #" + i);
+            System.out.println();//Quebra de linha
+            System.out.println("Cliente #" + i);//Indicação do cliente que será chamado
             System.out.println("Digite o nome: ");
             sc.nextLine();
             String nome = sc.nextLine();
@@ -38,23 +38,20 @@ public class Program {
             String email = sc.nextLine();
             System.out.println("Digite o número do quarto :");
             int quarto = sc.nextInt();
-            vetor[quarto] = new Pensao(nome, email);
+            vetor[quarto] = new Pensao(nome, email); //instanciando o vetor para receber na posição do quarto os dados do cliente
         }
 
-        String nome = "";
-        String email = "";
-        int quarto = 0;
-        for (int i = 0; i < 10; i++){
+
+        for (int i = 0; i < 10; i++){ //Laço de repetição para trazer os dados dos cliente com uma estrutura if para determinar como nulo os quartos não escolhidos, definindo a variável i sendo menor que o tamanho do vetor que é 10
             if (vetor[i] != null){
-                System.out.println(i +" "+ vetor[i]);
+
+                System.out.println(vetor[i] +" " + i);
 
             }
-
 
         }
 
         sc.close();
-
 
     }
 
