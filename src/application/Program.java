@@ -22,40 +22,36 @@ public class Program {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-//        Pensao[] vetor = new Pensao[10];
+        Pensao[] vetor = new Pensao[10]; //Estrutura do vetor a partir de uma classe.
 
         System.out.println("Quantos quartos serão alugados");
         int n = sc.nextInt();
 
-        Pensao[] vetor = new Pensao[10]; //Estrutura do vetor a partir de uma classe.
 
-        for(int i = 0; i < vetor.length; i++){
+        for(int i = 0; i < n; i++){
+            System.out.println();
+            System.out.println("Cliente #" + i);
+            System.out.println("Digite o nome: ");
             sc.nextLine();
-            System.out.println("Nome:");
-            vetor[i].setNome(sc.nextLine());
-            System.out.println("E-mail:");
-            vetor[i].setEmail(sc.nextLine());
-            System.out.println("Quarto:");
-            vetor[i].setQuarto(sc.nextInt());
-            vetor[i] = new Pensao();
-
+            String nome = sc.nextLine();
+            System.out.println("Digite o E-mail :");
+            String email = sc.nextLine();
+            System.out.println("Digite o nome do quarto :");
+            int quarto = sc.nextInt();
+            vetor[quarto] = new Pensao(nome, email);
         }
 
         String nome = "";
         String email = "";
         int quarto = 0;
-        for (int i = 0; i < n; i++){
-            nome = vetor[i].getNome();
-            email = vetor[i].getEmail();
-            quarto = vetor[i].getQuarto();
+        for (int i = 0; i < 10; i++){
+            if (vetor[i] != null){
+                System.out.println(i +" "+ vetor[i]);
+
+            }
+
 
         }
-        Pensao p1 = new Pensao(nome, email, quarto);
-        Pensao p2 = new Pensao(nome, email, quarto);
-        Pensao p3 = new Pensao(nome, email, quarto);
-        System.out.println(p1);
-        System.out.println(p2);
-        System.out.println(p3);
 
         sc.close();
 
