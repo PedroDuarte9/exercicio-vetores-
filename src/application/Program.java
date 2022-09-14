@@ -36,7 +36,7 @@ public class Program {
             String nome = sc.nextLine();
             System.out.println("Digite o E-mail :");
             String email = sc.nextLine();
-            System.out.println("Digite o nome do quarto :");
+            System.out.println("Digite o número do quarto :");
             int quarto = sc.nextInt();
             vetor[quarto] = new Pensao(nome, email);
         }
